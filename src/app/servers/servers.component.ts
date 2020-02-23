@@ -34,5 +34,4 @@ export class ServersComponent implements OnInit {
       this.allowServerCreation = true;
     }
   }
-
 }

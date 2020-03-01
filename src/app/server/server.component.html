@@ -1,6 +1,12 @@
 <div class="row">
-    <div class="col-12">
+    <div class="col-12"
+    [ngStyle]="{ paddingLeft:'0px'}"
+    >
         <!-- there way String interpolation -->
-       <p [ngStyle]="{'background-color': this.getColor()}"> {{ 'Server' }} with ID :{{this.serverID}} is {{this.getServerStatus()}} </p>
+       <p [ngStyle]="{'background-color': this.getColor()}"
+          [ngClass]="{online: this.serverStatus === 'Online'}"
+       >
+         {{ 'Server' }} with ID :{{this.serverID}} is {{this.getServerStatus()}}
+       </p>
     </div>
 </div>

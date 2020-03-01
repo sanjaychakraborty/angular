@@ -7,16 +7,16 @@
     </div>
     <div class="row">
         <div class="form-group">
-          <label for="">Event Bindling:</label>
+          <label for="">Event Binding:</label>
           <input type="text"
-            class="form-control" 
-            name="" 
-            id="eventBinding" 
-            aria-describedby="helpId" 
+            class="form-control"
+            name=""
+            id="eventBinding"
+            aria-describedby="helpId"
             placeholder="Enter Server Name!"
             (input)="this.OnServerCreate($event)"
             >
-          <small id="helpId" class="form-text text-muted">server name</small>
+          <small id="helpID" class="form-text text-muted">server name</small>
         </div>
     </div>
     <div class="row">
@@ -24,21 +24,21 @@
     </div>
     <div class="row">
         <div class="form-group">
-            <label for="">Two-Way Bindling</label>
+            <label for="">Two-Way Binding</label>
             <input type="text"
-              class="form-control" 
-              name="" 
-              id="Two-Way" 
-              aria-describedby="helpId" 
+              class="form-control"
+              name=""
+              id="Two-Way"
+              aria-describedby="helpId"
               [(ngModel)] = "this.creatNewServer"
               placeholder="Enter Serve name">
-            <small id="helpId" class="form-text text-muted">Two-Way Bindling</small>
+            <small id="help" class="form-text text-muted">Two-Way Binding</small>
           </div>
     </div>
     <!-- Property Binding -->
     <div class="row">
-        <button name="" id="" 
-        class="btn btn-primary"  
+        <button name="" id=""
+        class="btn btn-primary"
         role="button"
         (click) = "this.OnButtonClick()"
         [disabled]="!this.allowNewServer"
@@ -54,9 +54,8 @@
     <div class="row">
         <ng-template #dothis> No! New Server Found </ng-template>
     </div>
-    <div class="row">
-        <app-server></app-server>
-    </div>
+  <!-- *ngFor Structure Directive -->
+    <app-server *ngFor=" let server of this.servers"></app-server>
 </div>
 
 

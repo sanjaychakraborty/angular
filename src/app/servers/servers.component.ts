@@ -10,10 +10,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-  creatNewServer: String = '';
-  allowNewServer:boolean = false;
-  newServerName: String = null; 
-  allowServerCreation: boolean = false;
+  creatNewServer: string = null;
+  allowNewServer = false;
+  newServerName: string = null;
+  allowServerCreation = false;
+  servers = ['Test Server', 'Dev Server '];
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
@@ -23,15 +24,16 @@ export class ServersComponent implements OnInit {
   ngOnInit() {
   }
 
-  OnServerCreate (event:Event) {
-    this.creatNewServer = (<HTMLInputElement>event.target).value;
+  OnServerCreate(event: Event) {
+    this.creatNewServer = (event.target as HTMLInputElement).value;
   }
 
-  OnButtonClick () {
+  OnButtonClick() {
     this.allowServerCreation = false;
-    if (this.creatNewServer != "") {
+    if (this.creatNewServer !== '') {
       this.newServerName = this.creatNewServer;
       this.allowServerCreation = true;
+      this.servers.push(this.creatNewServer);
     }
   }
 }
